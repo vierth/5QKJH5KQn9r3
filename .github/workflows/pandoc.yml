@@ -1,0 +1,84 @@
+on: [workflow_dispatch]
+
+name: GitHub Actions for pandoc
+jobs:
+  pandoc:
+    runs-on: ubuntu-latest
+    name: nbconvert
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+
+      - name: deleting pandoc branch if exists
+        shell: bash
+        run: |
+          git push origin -d pandoc &>/dev/null || true 
+      
+      - name: extracting branch name & creating the new pandoc branch
+        shell: bash
+        run: |
+          echo "GitHub reft_name ${{ github.ref_name }}"
+          git checkout -b pandoc
+          git push -u origin pandoc
+        id: extract_branch
+      - name: retreiving name of the article
+        id: getfile
+        run: |
+          FIRST_FILE=$(ls *.ipynb | sort | head -n 1 | sed -e 's/\.ipynb$//')
+          echo "FIRST_IPYNB_FILE=$FIRST_FILE" >> $GITHUB_ENV
+      - name: pandoc convertion to docx
+        uses: docker://pandoc/latex:2.9
+        with:
+          args: --output=${{ env.FIRST_IPYNB_FILE }}.docx ${{ env.FIRST_IPYNB_FILE }}.ipynb 
+
+      - name: committing changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Automated commit
+          branch: pandoc
+          create_branch: true
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # Specify connection via URL (replaces server_address, server_port, secure,
+          # username and password)
+          #
+          # Format:
+          #
+          #  * smtp://user:password@server:port
+          #  * smtp+starttls://user:password@server:port
+          # connection_url: 'smtp://w7003273@gmail.com:"soes wbsg snpk rqno"@smtp.gmail.com:465'
+          # Required mail server address if not connection_url:
+          server_address: smtp.gmail.com
+          # # Server port, default 25:
+          server_port: 465
+          # Optional whether this connection use TLS (default is true if server_port is 465)
+          # secure: true
+          # # Optional (recommended) mail server username:
+          username: w7003273@gmail.com
+          # # Optional (recommended) mail server password:
+          password: soes wbsg snpk rqno
+          # Required mail subject:
+          subject: test email from github actions
+          # Required recipients' addresses:
+          to: yaro3245@gmail.com
+          # Required sender full name (address can be skipped):
+          from: Aboba Boba # <user@example.com>
+          # Optional plain body:
+          body: hello from github actions
+          # # Optional HTML body read from file:
+          # html_body: file://README.html
+          # Optional carbon copy recipients:
+          # cc: kyloren@example.com,leia@example.com
+          # # Optional blind carbon copy recipients:
+          # bcc: r2d2@example.com,hansolo@example.com
+          # Optional recipient of the email response:
+          reply_to: w7003273@gmail.com
+          # Optional unsigned/invalid certificates allowance:
+          ignore_cert: true
+          # # Optional converting Markdown to HTML (set content_type to text/html too):
+          # convert_markdown: true
+          # # Optional attachments:
+          # attachments: attachments.zip,git.diff,./dist/static/*.js
+          # Optional priority: 'high', 'normal' (default) or 'low'
+          priority: normal
