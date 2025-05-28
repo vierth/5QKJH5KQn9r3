@@ -12,7 +12,7 @@ jobs:
         id: skim
         uses: c2dh/journal-of-digital-history-ipynb-skim-action@v1.0.0
         with:
-          notebook: 'article.ipynb'
+          notebook: 'article_dynamic_viz.ipynb'
           output_notebook: 'skim-article.ipynb'
       # Use the output from the `hello` step
       - name: Use the output
