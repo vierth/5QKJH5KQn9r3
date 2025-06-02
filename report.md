@@ -3,35 +3,30 @@
 Look at the corrections you need to do, if not clear, contact jdh.admin@uni.lu
 
 ## Cell Counts   
-**all cells: 92**  
+**all cells: 94**  
 code_empty: 1   
-markdown: 52   
-code: 40   
+markdown: 56   
+code: 38   
 
 ## Action Outputs
 
 ### Size
-**total cells: 92**
+**total cells: 94**
 
 ### Citations Not Found
 
 
 ### Check Output Sizes and Rules
-- Output cell 45 size: 4452.60 KB
-> First words of input cell: # specify the known source
 
-Total output size: 7852.87 KB
+Total output size: 3125.89 KB
 Total number of images: 15
 Total number of tables: 0
 Total number of audios: 0
 
-> [!WARNING]
-> Notebook's output contains **text/plain** which is deprecated.
-
 | Mimetype | Presence |
 | --- | --- |
-| text/html | True |
-| text/plain | True |
+| text/html | False |
+| text/plain | False |
 | image/png | True |
 | audio | False |
 
@@ -43,24 +38,20 @@ Total number of audios: 0
 | Tag | Cell | Remark |
 | --- | --- | --- |
 | image/png | 4 | Image is not tagged properly [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZqZGgtb2JzZXJ2ZXIlMkY1UUtKSDVLUW45cjMlMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=4) |
-| image/png | 15 | Correct tagging |
-| image/png | 17 | Correct tagging |
 | image/png | 19 | Correct tagging |
-| image/png | 40 | Correct tagging |
-| image/png | 46 | Correct tagging |
-| image/png | 52 | Correct tagging |
-| text/plain | 55 | Should be replaced |
-| text/plain | 55 | Should be replaced |
-| image/png | 58 | Correct tagging |
-| image/png | 60 | Correct tagging |
+| image/png | 21 | Correct tagging |
+| image/png | 23 | Correct tagging |
+| image/png | 44 | Correct tagging |
+| image/png | 50 | Correct tagging |
+| image/png | 56 | Correct tagging |
+| image/png | 61 | Correct tagging |
 | image/png | 63 | Correct tagging |
-| image/png | 67 | Correct tagging |
-| text/plain | 70 | Should be replaced |
-| text/plain | 70 | Should be replaced |
-| image/png | 73 | Correct tagging |
-| image/png | 79 | Correct tagging |
+| image/png | 66 | Correct tagging |
+| image/png | 70 | Correct tagging |
+| image/png | 75 | Correct tagging |
 | image/png | 81 | Correct tagging |
-| image/png | 85 | Correct tagging |
+| image/png | 83 | Correct tagging |
+| image/png | 87 | Correct tagging |
 
 
 ### Check HTML
@@ -70,6 +61,8 @@ Total number of audios: 0
 - Cell 8 - Encountered an end tag: a
 - Cell 8 - Encountered a start tag: a
 - Cell 8 - Encountered an end tag: a
+- Cell 8 - Encountered a start tag: a
+- Cell 8 - Encountered an end tag: a
 - Cell 10 - Encountered a start tag: a
 - Cell 10 - Encountered an end tag: a
 - Cell 10 - Encountered a start tag: a
@@ -90,52 +83,46 @@ Total number of audios: 0
 - Cell 10 - Encountered an end tag: a
 - Cell 10 - Encountered a start tag: a
 - Cell 10 - Encountered an end tag: a
-- Cell 12 - Encountered a start tag: a
-- Cell 12 - Encountered an end tag: a
-- Cell 12 - Encountered a start tag: a
-- Cell 12 - Encountered an end tag: a
-- Cell 24 - Encountered a start tag: a
-- Cell 24 - Encountered an end tag: a
-- Cell 24 - Encountered a start tag: a
-- Cell 24 - Encountered a start tag: i
-- Cell 24 - Encountered an end tag: i
-- Cell 24 - Encountered an end tag: a
-- Cell 33 - Encountered a start tag: a
-- Cell 33 - Encountered a start tag: i
-- Cell 33 - Encountered an end tag: i
-- Cell 33 - Encountered an end tag: a
-- Cell 33 - Encountered a start tag: a
-- Cell 33 - Encountered a start tag: i
-- Cell 33 - Encountered an end tag: i
-- Cell 33 - Encountered an end tag: a
+- Cell 14 - Encountered a start tag: a
+- Cell 14 - Encountered an end tag: a
+- Cell 14 - Encountered a start tag: a
+- Cell 14 - Encountered an end tag: a
+- Cell 28 - Encountered a start tag: a
+- Cell 28 - Encountered an end tag: a
+- Cell 28 - Encountered a start tag: a
+- Cell 28 - Encountered a start tag: i
+- Cell 28 - Encountered an end tag: i
+- Cell 28 - Encountered an end tag: a
 - Cell 37 - Encountered a start tag: a
+- Cell 37 - Encountered a start tag: i
+- Cell 37 - Encountered an end tag: i
 - Cell 37 - Encountered an end tag: a
-- Cell 65 - Encountered a start tag: a
-- Cell 65 - Encountered an end tag: a
-- Cell 80 - Encountered a start tag: a
-- Cell 80 - Encountered an end tag: a
-- Cell 80 - Encountered a start tag: a
-- Cell 80 - Encountered an end tag: a
-- Cell 86 - Encountered a start tag: a
-- Cell 86 - Encountered an end tag: a
-- Cell 86 - Encountered a start tag: a
-- Cell 86 - Encountered a start tag: i
-- Cell 86 - Encountered an end tag: i
-- Cell 86 - Encountered an end tag: a
-- Cell 86 - Encountered a start tag: a
-- Cell 86 - Encountered a start tag: i
-- Cell 86 - Encountered an end tag: i
-- Cell 86 - Encountered an end tag: a
+- Cell 37 - Encountered a start tag: a
+- Cell 37 - Encountered a start tag: i
+- Cell 37 - Encountered an end tag: i
+- Cell 37 - Encountered an end tag: a
+- Cell 41 - Encountered a start tag: a
+- Cell 41 - Encountered an end tag: a
+- Cell 68 - Encountered a start tag: a
+- Cell 68 - Encountered an end tag: a
+- Cell 82 - Encountered a start tag: a
+- Cell 82 - Encountered an end tag: a
+- Cell 82 - Encountered a start tag: a
+- Cell 82 - Encountered an end tag: a
+- Cell 88 - Encountered a start tag: a
+- Cell 88 - Encountered an end tag: a
+- Cell 88 - Encountered a start tag: a
+- Cell 88 - Encountered a start tag: i
+- Cell 88 - Encountered an end tag: i
+- Cell 88 - Encountered an end tag: a
+- Cell 88 - Encountered a start tag: a
+- Cell 88 - Encountered a start tag: i
+- Cell 88 - Encountered an end tag: i
+- Cell 88 - Encountered an end tag: a
 
 
 ### Check JavaScript
-**WARNING: 1 output cells contain JavaScript code.**
-
--  [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZqZGgtb2JzZXJ2ZXIlMkY1UUtKSDVLUW45cjMlMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=45)
-### Check JavaScript (plotly)
-**require.undef("plotly")** is present
-
-**\* plotly.js** is present
+No JavaScript code found in output cells.
 
 
 ### Check Tags
@@ -147,15 +134,15 @@ Total number of audios: 0
 - Cell 6: Tags: ['abstract']
 - Cell 9: Tags: ['hermeneutics']
 - Cell 10: Tags: ['hermeneutics']
-- Cell 11: Tags: ['hermeneutics']
+- Cell 11: Tags: ['hermeneutics', 'table-characters-*']
 - Cell 12: Tags: ['hermeneutics']
-- Cell 15: Tags: ['figure-corpusheatmap-*']
-- Cell 17: Tags: ['figure-earlierheatmap-*']
-- Cell 19: Tags: ['figure-unknownheatmap-*']
-- Cell 21: Tags: ['hermeneutics']
-- Cell 22: Tags: ['hermeneutics']
-- Cell 23: Tags: ['hermeneutics']
-- Cell 24: Tags: ['hermeneutics']
+- Cell 13: Tags: ['hermeneutics']
+- Cell 14: Tags: ['hermeneutics']
+- Cell 15: Tags: ['hermeneutics', 'table-quotes-*']
+- Cell 16: Tags: ['hermeneutics']
+- Cell 19: Tags: ['figure-corpusheatmap-*']
+- Cell 21: Tags: ['figure-earlierheatmap-*']
+- Cell 23: Tags: ['figure-unknownheatmap-*']
 - Cell 25: Tags: ['hermeneutics']
 - Cell 26: Tags: ['hermeneutics']
 - Cell 27: Tags: ['hermeneutics']
@@ -167,40 +154,42 @@ Total number of audios: 0
 - Cell 33: Tags: ['hermeneutics']
 - Cell 34: Tags: ['hermeneutics']
 - Cell 35: Tags: ['hermeneutics']
+- Cell 36: Tags: ['hermeneutics']
+- Cell 37: Tags: ['hermeneutics']
 - Cell 38: Tags: ['hermeneutics']
 - Cell 39: Tags: ['hermeneutics']
-- Cell 40: Tags: ['figure-pcajingshi-*']
-- Cell 42: Tags: ['table-cmyujingjingshi-*']
-- Cell 44: Tags: ['hermeneutics']
-- Cell 45: Tags: ['hermeneutics']
-- Cell 46: Tags: ['figure-yujingpred-*']
-- Cell 50: Tags: ['hermeneutics']
-- Cell 51: Tags: ['hermeneutics']
-- Cell 52: Tags: ['figure-pcajpmwm-*']
-- Cell 54: Tags: ['table-cmjpmvwm-*']
+- Cell 42: Tags: ['hermeneutics']
+- Cell 43: Tags: ['hermeneutics']
+- Cell 44: Tags: ['figure-pcajingshi-*']
+- Cell 46: Tags: ['table-cmyujingjingshi-*']
+- Cell 48: Tags: ['hermeneutics']
+- Cell 49: Tags: ['hermeneutics']
+- Cell 50: Tags: ['figure-yujingpred-*']
+- Cell 54: Tags: ['hermeneutics']
 - Cell 55: Tags: ['hermeneutics']
-- Cell 57: Tags: ['hermeneutics']
-- Cell 58: Tags: ['figure-watermarginpred-*']
-- Cell 60: Tags: ['figure-pcajpmvwmloadings-*']
-- Cell 62: Tags: ['hermeneutics']
-- Cell 63: Tags: ['figure-watermarginns-*']
-- Cell 66: Tags: ['hermeneutics']
-- Cell 67: Tags: ['figure-pcajpmcn-*']
-- Cell 70: Tags: ['hermeneutics']
-- Cell 71: Tags: ['table-*']
+- Cell 56: Tags: ['figure-pcajpmwm-*']
+- Cell 58: Tags: ['table-cmjpmvwm-*']
+- Cell 60: Tags: ['hermeneutics']
+- Cell 61: Tags: ['figure-watermarginpred-*']
+- Cell 63: Tags: ['figure-pcajpmvwmloadings-*']
+- Cell 65: Tags: ['hermeneutics']
+- Cell 66: Tags: ['figure-watermarginns-*']
+- Cell 69: Tags: ['hermeneutics']
+- Cell 70: Tags: ['figure-pcajpmcn-*']
+- Cell 72: Tags: ['table-*']
   - Invalid tag: table-*
-- Cell 72: Tags: ['hermeneutics']
-- Cell 73: Tags: ['figure-cinuepred-*']
-- Cell 77: Tags: ['hermeneutics']
-- Cell 78: Tags: ['hermeneutics']
-- Cell 79: Tags: ['figure-predoriginpredate-*']
-- Cell 81: Tags: ['figure-layeredintertext-*']
-- Cell 83: Tags: ['hermeneutics']
-- Cell 84: Tags: ['hermeneutics']
-- Cell 85: Tags: ['figure-predoriginunk-*']
-- Cell 89: Tags: ['hermeneutics']
-- Cell 90: Tags: ['hermeneutics']
+- Cell 74: Tags: ['hermeneutics']
+- Cell 75: Tags: ['figure-cinuepred-*']
+- Cell 79: Tags: ['hermeneutics']
+- Cell 80: Tags: ['hermeneutics']
+- Cell 81: Tags: ['figure-predoriginpredate-*']
+- Cell 83: Tags: ['figure-layeredintertext-*']
+- Cell 85: Tags: ['hermeneutics']
+- Cell 86: Tags: ['hermeneutics']
+- Cell 87: Tags: ['figure-predoriginunk-*']
 - Cell 91: Tags: ['hermeneutics']
+- Cell 92: Tags: ['hermeneutics']
+- Cell 93: Tags: ['hermeneutics']
 > [!WARNING]
 > The following tags are missing or invalid
 
@@ -221,10 +210,8 @@ Invalid URL (Other - 403): https://ctext.org/tools/parallel-passages
 > Even if some of the urls listed above don't seem to be broken, try to replace them with the valid ones as they might become unavailable soon.
 
 
-**Valid URLs (200 - 4):**
+**Valid URLs (200 - 2):**
 
-2. https://orcid.org/0000-0002-2135-9499
-3. https://licensebuttons.net/l/by/4.0/88x31.png
-4. https://creativecommons.org/licenses/by/4.0/
-5. https://github.com/vierth/intertextualityjpm
+2. https://licensebuttons.net/l/by/4.0/88x31.png
+4. https://github.com/vierth/intertextualityjpm
 
