@@ -211,7 +211,7 @@ display(Image("media/heatmapsunknown.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-References that can only be sourced to unknown materials are abundant but more intermittent than those from earlier texts and computational analysis represents fascinating possibilities for understanding their likely origins. This lower incidence of reference likely derives from teh very high rate of refence to known earlier works like the _Water Margin_, which dominate the intertextual space.
+References that can only be sourced to unknown materials are abundant but more intermittent than those from earlier texts and computational analysis represents fascinating possibilities for understanding their likely origins. This lower incidence of reference likely derives from the very high rate of refence to known earlier works like the _Water Margin_, which dominate the intertextual space.
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
@@ -834,7 +834,7 @@ display(Image("media/pcajpmvswatermargin.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-Again, significant variance hids from view in these types of visualizations. Here the first two principal components only capture the first 4.8 and 3 percent of variance respectively, much lower than the variance I capture in the _Yujing_ vs. _Jingshi_ comparison. But the text classifier does not operate on the principal components and can leverage all of the untransformed data. Somewhat surprisingly, the _Jinpingmei_ vs. _Water Margin_ model’s accuracy is admirably high. Using ten-fold cross validation, the models are 91 percent accurate. The following confusion table illustrates the results of applying the model to the validation set:
+Again, significant variance are hidden from view in these types of visualizations. Here the first two principal components only capture the first 4.8 and 3 percent of variance respectively, much lower than the variance I capture in the _Yujing_ vs. _Jingshi_ comparison. But the text classifier does not operate on the principal components and can leverage all of the untransformed data. Somewhat surprisingly, the _Jinpingmei_ vs. _Water Margin_ model’s accuracy is admirably high. Using ten-fold cross validation, the models are 91 percent accurate. The following confusion table illustrates the results of applying the model to the validation set:
 <!-- #endregion -->
 
 <!-- #region editable=true jdh={"module": "object", "object": {"source": ["Confusion matrix showing accuracy of model."]}} slideshow={"slide_type": ""} tags=["table-cmjpmvwm-*"] -->
@@ -845,7 +845,7 @@ Predicted _Water Margin_|100|1151
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-Yet despite the excellent performance of the model, its accuracy is much less impressive when applied to the sections of text shared between the two novels. The classifier struggles to stay much about 53 percent accuracy, and the edited sections of text found within _Jinpingmei_ are associated with _Shuihu zhuan_ just over 50 percent of the time. This is only marginally better than a random guess.
+Yet despite the excellent performance of the model, its accuracy is much less impressive when applied to the sections of text shared between the two novels. The classifier struggles to stay much around 53 percent accuracy, and the edited sections of text found within _Jinpingmei_ are associated with _Shuihu zhuan_ just over 50 percent of the time. This is only marginally better than a random guess.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["hermeneutics"]
