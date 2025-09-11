@@ -111,7 +111,7 @@ When I perform the intertextuality analysis, I look for all sequences of at leas
 While the exact parameters I use for searching are somewhat arbitrary, I arrived at these in an attempt to find a balance between noise and comprehensive results (that is to say, I balance precision and recall). The shorter and less similar a sequence I allow, the more likely I will find random, rather than meaningful, instances of reuse. Longer and stricter parameters generate less noisy results, but often miss interesting cases of reuse. A search using these 10 character, 80 percent parameters identifies approximately 537,000 cases of textual reuse in the corpus, involving 13,300 unique quotes across 4,565 unique texts. The results are broken down depending on their temporal relationship with _Jinpingmei_ in the following table:
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"ns4la": [{"id": "7306679/P52MDVIJ", "source": "zotero"}], "p1l0n": [{"id": "7306679/ENPVXQXJ", "source": "zotero"}]}} editable=true jdh={"module": "object", "object": {"source": ["Total number of quotes by temporal relationship with Jinpingmei."]}} slideshow={"slide_type": ""} tags=["hermeneutics", "table-quotes-*"] -->
+<!-- #region citation-manager={"citations": {"ns4la": [{"id": "7306679/P52MDVIJ", "source": "zotero"}], "p1l0n": [{"id": "7306679/ENPVXQXJ", "source": "zotero"}]}} editable=true jdh={"module": "object", "object": {"source": ["Total number of quotes by temporal relationship with _Jinpingmei_."]}} slideshow={"slide_type": ""} tags=["hermeneutics", "table-quotes-*"] -->
 | Temporal Relation to _JPM_    | Number of quotes | Unique quotes | Total characters in unique quotes |
 | -------- | ------- | ------ | ------ |
 | Predates  | 49,004 | 3,228 |82,760|
@@ -824,7 +824,7 @@ metadata={
         "object":{
             "type":"image",
             "source":[
-                "PCA showing style of Jinpingmei vs. Water Margin"
+                "PCA showing style of _Jinpingmei_ vs. _Water Margin_"
             ]
 
         }
@@ -956,7 +956,7 @@ display(Image("./media/watermarginpredbylengthnostopwords.png", width=1000), met
 <!-- #endregion -->
 
 <!-- #region citation-manager={"citations": {"2pkhp": [{"id": "7306679/GGDJFCUZ", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} -->
-Another intriguing example of intertextuality exists between _Jinpingmei_ and Li Kaixian’s work _Cinüe_ (Jesting on Lyrics 詞謔), a piece of dramatic criticism. These two works share a smattering of text throughout _Jinpingmei_, but one scene of particular importance shared between the two occurs in chapter 71 of _Jinpingmei_, in which Ximen Qing and He Xin the Eunuch Director listen to a rather extended song suite (for an English translation see (<cite id="2pkhp"><a href="#zotero%7C7306679%2FGGDJFCUZ">(Roy, 2011)</a></cite>, 309)). Establishing the directionality of quotation is particularly interesting if it turns out the _Cinüe_ is quoting from _Jinpingmei_; this might then serve as evidence that Li Kaixian is a prime candidate for the likely identity of the author of _Jingpingmei_. Some scholars already suspect Li may be the author, but he passed away in 1568, well before there is evidence of _Jinpingmei_ circulating. Beyond its implications for authorship, this would also potentially push the earliest date of composition of the novel back in time substantially.
+Another intriguing example of intertextuality exists between _Jinpingmei_ and Li Kaixian’s work _Cinüe_ (Jesting on Lyrics 詞謔), a piece of dramatic criticism. These two works share a smattering of text throughout _Jinpingmei_, but one scene of particular importance shared between the two occurs in chapter 71 of _Jinpingmei_, in which Ximen Qing and He Xin the Eunuch Director listen to a rather extended song suite (for an English translation see (<cite id="2pkhp"><a href="#zotero%7C7306679%2FGGDJFCUZ">(Roy, 2011)</a></cite>, 309). Establishing the directionality of quotation is particularly interesting if it turns out the _Cinüe_ is quoting from _Jinpingmei_; this might then serve as evidence that Li Kaixian is a prime candidate for the likely identity of the author of _Jingpingmei_. Some scholars already suspect Li may be the author, but he passed away in 1568, well before there is evidence of _Jinpingmei_ circulating. Beyond its implications for authorship, this would also potentially push the earliest date of composition of the novel back in time substantially.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["hermeneutics"]
@@ -990,7 +990,7 @@ metadata={
         "object":{
             "type":"image",
             "source":[
-                "PCA showing style of Jinpingmei vs Cinue"
+                "PCA showing style of _Jinpingmei_ vs _Cinüe_"
             ]
 
         }
@@ -1263,12 +1263,7 @@ Despite a few clear misses, there are very few cases where this approach complet
 
 The complex results illustrated in this figure highlight that one cannot treat intertextuality in a naïve fashion and simply assume that the models will be infallible. The model can only tell us, based on the input vectors, which document a string appears most similar to, even when the actual origin of the quote might be represented elsewhere in the corpus. It makes sense to find ways of increasing the fidelity of the results. One option is to train a multi-class model that aims to ascribe each quote to a particular text within the corpus. While an important step to take eventually, this is not necessarily the best first approach. As the number of classes in a model increases, the more complex, and often less reliable, the model becomes.
 
-Instead, a useful first step in trying to trace the ultimate source of quotes within the novel might be to narrow the search space as much as possible before even building any models. One heuristic for dealing with heavily layered text is to follow Hanan’s example by looking for instances of the overlap and identifying the work where the longest matching quotes appear. If four different texts all share the same substrings, but one of them encompasses all the rest, this is likely to be the actual origin of the quote. Thus, it may not even be necessary to compare _Jinpingmei_ against a text if it is clearly not the origin of the material. The quote from the _Qingpingshantang huaben_ that appears at the beginning of this article is a good example. The intertextuality algorithm identifies three texts in which the opening poem appears: the _Qingpingshantang huaben_, the _Quansongci_ (Complete Lyric Poems of the Song Dynasty 全宋詞), and the _Shuofu_ (Purlieus of Exposition 說郛), a translation by Victor Mair via Christopher Atwood<!-- BIBLIOGRAPHY START -->
-<div class="csl-bib-body">
-  <div class="csl-entry"><i id="zotero|7306679/JIV3M8QJ"></i>Hanan, P. (1963). Sources of the Chin P’ing Mei. <i>Asia Major</i>, <i>10</i>(2), 23–67.</div>
-  <div class="csl-entry"><i id="zotero|7306679/X6CT5F9A"></i>Roy, D. (1997). <i>The Plum in the Golden Vase</i> (Vol. 1). Princeton University Press.</div>
-</div>
-<!-- BIBLIOGRAPHY END -->. Yet the _Qingpingshantang huaben_ quote continues beyond the poem and then later intersects with quotes from even more works, as shown in Figure 11. Ideally, I would simply compare _Jinpingmei_ against _Qingpingshantang huaben_ and dispense with the comparisons with the other works.
+Instead, a useful first step in trying to trace the ultimate source of quotes within the novel might be to narrow the search space as much as possible before even building any models. One heuristic for dealing with heavily layered text is to follow Hanan’s example by looking for instances of the overlap and identifying the work where the longest matching quotes appear. If four different texts all share the same substrings, but one of them encompasses all the rest, this is likely to be the actual origin of the quote. Thus, it may not even be necessary to compare _Jinpingmei_ against a text if it is clearly not the origin of the material. The quote from the _Qingpingshantang huaben_ that appears at the beginning of this article is a good example. The intertextuality algorithm identifies three texts in which the opening poem appears: the _Qingpingshantang huaben_, the _Quansongci_ (Complete Lyric Poems of the Song Dynasty 全宋詞), and the _Shuofu_ (Purlieus of Exposition 說郛), a translation by Victor Mair via Christopher Atwood. Yet the _Qingpingshantang huaben_ quote continues beyond the poem and then later intersects with quotes from even more works, as shown in Figure 11. Ideally, I would simply compare _Jinpingmei_ against _Qingpingshantang huaben_ and dispense with the comparisons with the other works.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["figure-layeredintertext-*"]
