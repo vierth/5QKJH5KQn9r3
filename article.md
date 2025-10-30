@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.17.3
+      jupytext_version: 1.18.1
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
@@ -39,7 +39,7 @@ textual history, source detection, machine learning, digital humanities, ming dy
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} tags=["abstract"] -->
-The infamous late sixteenth century novel _Jinpingmei_ (_Plum in the Golden Vase_) is renowned as one of the greatest novels of the Chinese tradition and is famed for its extensive intertextuality and complex appropriation of earlier cultural material. The pseudonymous author of _Jinpingmei_ spins a masterful and highly pornographic story out of a brief episode from an earlier novel Shuihu zhuan (Water Margin) and peppers the adapted narrative with intrusions of material from a dizzying array of external works with seemingly no regard for the boundaries of genre. This complex intertextual landscape has attracted the attention of scholars in the hundreds of years since the novel first began to circulate, but now computational methods enable us to systematically reconstruct the novel’s textual origins. In this paper, I propose a methodology to broaden our understanding of this intertextuality using machine-learning based text classifiers to identify the likely textual origin of each instance of text reuse identified within a digital corpus, using the intuition that materials endogenous to _Jinpingmei_ will be more stylistically similar to the rest of the novel than exogenous materials (and conversely, that external materials will more greatly resemble the external work than _Jinpingmei_). In this piece, I demonstrate the value and pitfalls of machine-aided detection of source material when working with complex textual artifacts like _Jinpingmei_ and comment on the broader applicability of these methods to other literary works from China.
+The infamous late sixteenth century novel _Jinpingmei_ (_Plum in the Golden Vase_) is renowned as one of the greatest novels of the Chinese tradition and is famed for its extensive intertextuality and complex appropriation of earlier cultural material. The pseudonymous author of _Jinpingmei_ spins a masterful and highly pornographic story out of a brief episode from an earlier novel _Shuihu zhuan_ (_Water Margin_) and peppers the adapted narrative with intrusions of material from a dizzying array of external works with seemingly no regard for the boundaries of genre. This complex intertextual landscape has attracted the attention of scholars in the hundreds of years since the novel first began to circulate, but now computational methods enable us to systematically reconstruct the novel’s textual origins. In this paper, I propose a methodology to broaden our understanding of this intertextuality using machine-learning based text classifiers to identify the likely textual origin of each instance of text reuse identified within a digital corpus, using the intuition that materials endogenous to _Jinpingmei_ will be more stylistically similar to the rest of the novel than exogenous materials (and conversely, that external materials will more greatly resemble the external work than _Jinpingmei_). In this piece, I demonstrate the value and pitfalls of machine-aided detection of source material when working with complex textual artifacts like _Jinpingmei_ and comment on the broader applicability of these methods to other literary works from China.
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -47,25 +47,25 @@ The infamous late sixteenth century novel _Jinpingmei_ (_Plum in the Golden Vase
 <!-- #endregion -->
 
 <!-- #region citation-manager={"citations": {"5msjh": [{"id": "7306679/X6CT5F9A", "source": "zotero"}], "hj4hq": [{"id": "7306679/JIV3M8QJ", "source": "zotero"}], "irnsb": [{"id": "7306679/X6CT5F9A", "source": "zotero"}], "mvu3r": [{"id": "7306679/Q5RWL8KK", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} -->
-The earliest extant edition of the late Ming novel _Jinpingmei_ (_Plum in the Golden Vase_ 金瓶梅), known as the _cihua_ 詞話 or Wanli 萬曆 edition (named after the Wanli reign, 1570--1620), hereafter _Jinpingmei_, opens not with original material but with a reference to an older ci lyric poem:
+The earliest extant edition of the late Ming novel _Jinpingmei_ (_Plum in the Golden Vase_ 金瓶梅), known as the _cihua_ 詞話 or Wanli 萬曆 edition (named after the Wanli reign, 1570--1620), hereafter _Jinpingmei_, opens not with original material but with a reference to an older _ci_ (lyric poem 詞):
 
-> The hero grips his “Hook of Wu.” Eager to cut off ten thousand heads. How is it that a heart forged out of iron and stone, can yet be melted by a flower? Just take a look at Hsiang Yü and Liu Pang: Both cases are equally distressing. They only had to meet with Yü-chi and Lady Ch’i for all their valor to come to naught” (<cite id="5msjh"><a href="#zotero%7C7306679%2FX6CT5F9A">(Roy, 1997)</a></cite>, 12).
+> The hero grips his “Hook of Wu.” Eager to cut off ten thousand heads. How is it that a heart forged out of iron and stone, can yet be melted by a flower? Just take a look at Hsiang Yü and Liu Pang: Both cases are equally distressing. They only had to meet with Yü-chi and Lady Ch’i for all their valor to come to naught” (<cite id="5msjh"><a href="#zotero%7C7306679%2FX6CT5F9A">(Roy, 1993)</a></cite>, 12).
 詞曰：「丈夫只手把吳鉤，欲斬萬人頭。如何鐵石打成心性，卻為花柔。請看項籍並劉季，一似使人愁；只因撞著虞姬戚氏，豪傑都休。」
 
-Widely viewed as a masterpiece and one of the most important and innovative works in the Chinese literary tradition, the anonymously written _Jinpingmei_ was unique, experimental, and extremely controversial. The novel touches on a myriad of social, political, religious, and moral issues through the lens of a pornographic story and is viewed as an important allegory lampooning late Ming society. Yet despite the novel’s unique place in Chinese literary history, this very first passage, and significant portions of the novel as a whole, is not original. As Patrick Hanan points out, this same lyric poem (with only very minor differences) can be found in the late fifteenth century Hong Pian’s 洪楩 Qingpingshantang huaben (Huaben from Qingping Mountain Hall 清平山堂話本), a collection of short stories referenced throughout _Jinpingmei_ (<cite id="hj4hq"><a href="#zotero%7C7306679%2FJIV3M8QJ">(Hanan, 1963)</a></cite>, 25). Critically for Hanan’s argument, it is not just the poem that is copied; the novel reproduces the explanation for the poem that immediately follows nearly verbatim:
+Widely viewed as a masterpiece and one of the most important and innovative works in the Chinese literary tradition, the anonymously written _Jinpingmei_ was unique, experimental, and extremely controversial. The novel touches on a myriad of social, political, religious, and moral issues through the lens of a pornographic story and is viewed as an important allegory lampooning late Ming society. Yet despite the novel’s unique place in Chinese literary history, this very first passage, and significant portions of the novel as a whole, is not original. As Patrick Hanan points out, this same lyric poem (with only very minor differences) can be found in the late fifteenth century Hong Pian’s 洪楩 _Qingpingshantang huaben_ (_Huaben from Qingping Mountain Hall_ 清平山堂話本), a collection of short stories referenced throughout _Jinpingmei_ (<cite id="hj4hq"><a href="#zotero%7C7306679%2FJIV3M8QJ">(Hanan, 1963)</a></cite>, 25). Critically for Hanan’s argument, it is not just the poem that is copied; the novel reproduces the explanation for the poem that immediately follows nearly verbatim:
 
-> The subject of this lyric is the words passion and beauty, two concepts that are related to each other as substance is to function. Thus, when beauty bedazzles the eye, passion is born in the heart. Passion and beauty evoke from ancient times until the present day, gentlemen of moral cultivation ought never to forget. As two men of the Chin dynasty once said, “It is people just like ourselves who are most affected by passion (<cite id="irnsb"><a href="#zotero%7C7306679%2FX6CT5F9A">(Roy, 1997)</a></cite>, 12).
+> The subject of this lyric is the words passion and beauty, two concepts that are related to each other as substance is to function. Thus, when beauty bedazzles the eye, passion is born in the heart. Passion and beauty evoke from ancient times until the present day, gentlemen of moral cultivation ought never to forget. As two men of the Chin dynasty once said, “It is people just like ourselves who are most affected by passion (<cite id="irnsb"><a href="#zotero%7C7306679%2FX6CT5F9A">(Roy, 1993)</a></cite>, 12).
 此一只詞兒上詩詞各一首，單說著情色二字，乃一體一用也。故色絢於目，情感於心，情色相生，心目相視。雖亙古及迄今，仁人君子，弗合能忘之。晉人云：「情之所鍾，正在我輩。」
 
-Patrick Hanan uses this as evidence that the author of _Jinpingmei_ was almost certainly copying the _Wenjing yuanyang hui_ 刎頸鴛鴦會 short story within _Qingpingshan_, though this story in turn owes parts of its composition to even older works; buried within this short section of text are references to older materials from the Song, Yuan, and Ming dynasties.
+Patrick Hanan uses this as evidence that the author of _Jinpingmei_ was almost certainly copying the _Wenjing yuanyang hui_ (_Murder at a Tryst_ 刎頸鴛鴦會) short story within _Qingpingshan_, though this story in turn owes parts of its composition to even older works; buried within this short section of text are references to older materials from the Song, Yuan, and Ming dynasties.
 
 Opening the novel with recycled material immediately primes the reader to expect such moves throughout the novel. The _cihua_ edition immediately pivots from this relatively short instance of intertextuality to a more widely recognized, and much longer, adaptation of material from the novel _Shuihu zhuan_ (_Water Margin_ 水滸傳). After the significant opening interlude, the novel constantly returns to earlier material. The complex intertextual references within _Jinpingmei_ are so dense that well over five percent of the novel derives from earlier sources.
 
-Contemporary readers would have been steeped in the quoted works, and these references would have likely elicited a variety of responses dependent on knowledge of the earlier works. Yet even they clearly found this material difficult, and very few modern readers have enough insight into the sources to fully appreciate the effect they have on the novel. Many details of this intertextuality remain elusive, even in terms of the most clear cases. For example, the specific version of the _Water Margin_ the author used is some matter of debate, and Hanan argues that the source edition is distinct from the many currently extant versions. These problems are not unique to modern readers either, as late imperial readers clearly felt the _Water Margin’s_ influence on _Jinpingmei_ controversial. Later editions of the _Jinpingmei_, such as the much more popular Chongzhen-era (1628--1644) edition, significantly reframe the relationship between the two novels by excising and editing large amounts of the shared text.
+Contemporary readers would have been steeped in the quoted works, and these references would have likely elicited a variety of responses dependent on knowledge of the earlier works. Yet even they clearly found this material difficult, and very few modern readers have enough insight into the sources to fully appreciate the effect they have on the novel. Many details of this intertextuality remain elusive, even in terms of the most clear cases. For example, the specific version of the _Shuihu zhuan_ the author used is some matter of debate, and Hanan argues that the source edition is distinct from the many currently extant versions. These problems are not unique to modern readers either, as late imperial readers clearly felt the _Shuihu zhuan's_ influence on _Jinpingmei_ controversial. Later editions of the _Jinpingmei_, such as the much more popular Chongzhen-era (1628--1644) edition, significantly reframe the relationship between the two novels by excising and editing large amounts of the shared text.
 
 Following the permutations of textual adaptation within the novel offers a deeper understanding of the work, but it is an arduous process that requires an extremely in-depth knowledge of the works circulating when _Jinpingmei_ was written. _Jinpingmei’s_ role as an exemplar in the art of textual appropriation makes it a perfect test case for developing digital methods for automatic detection of intertextuality and disambiguation of sources. Patrick Hanan’s 1963 article “Sources of the Chin P’ing Mei” is a masterclass in textual scholarship, in which he identifies many of the works directly copied within the novel. But digital methods and materials open the door to such detailed scholarship much more widely. Critically, they allow me to generate a generalizable approach that works beyond the case of _Jinpingmei_ that may be valuable in studying all manner of literary and historical materials.
 
-In prior work I developed and adapted a method that makes identifying instances of intertextuality at corpus scale feasible (<cite id="mvu3r"><a href="#zotero%7C7306679%2FQ5RWL8KK">(Vierthaler and Gelein)</a></cite>). However, this approach left the issue of quotational direction unanswered, providing no clarity in terms of which text was quoting which. In this article, I discuss experiments I have been conducting that leverage stylistic signals found within digital corpora and intertextual material to computationally identify the textual antecedents deployed so readily within _Jinpingmei_. This process is critical for revealing more about the nature of _Jinpingmei_ as a heteroglossic, intertextual work, but it also leads to the creation of tools useful for studying textual sources within Chinese materials writ large. Specifically, I will introduce a workflow in which I train various machine-learning models that operate on stylistic markers (primarily the relative use of certain words/characters) to evaluate the likely direction of textual sharing between _Jinpingmei_ and related works. This process rests on the general assumption that a quote is more similar to the text it originates from than to the text is has been inserted into. This is primarily useful for cases where the quotational direction cannot be ascertained through purely chronological means, developing an approach to identifying quotations that is not possible absent computational analysis.
+In prior work I developed and adapted a method that makes identifying instances of intertextuality at corpus scale feasible (<cite id="mvu3r"><a href="#zotero%7C7306679%2FQ5RWL8KK">(Vierthaler &#38; Gelein, 2019)</a></cite>). However, this approach left the issue of quotational direction unanswered, providing no clarity in terms of which text was quoting which. In this article, I discuss experiments I have been conducting that leverage stylistic signals found within digital corpora and intertextual material to computationally identify the textual antecedents deployed so readily within _Jinpingmei_. This process is critical for revealing more about the nature of _Jinpingmei_ as a heteroglossic, intertextual work, but it also leads to the creation of tools useful for studying textual sources within Chinese materials writ large. Specifically, I will introduce a workflow in which I train various machine-learning models that operate on stylistic markers (primarily the relative use of certain words/characters) to evaluate the likely direction of textual sharing between _Jinpingmei_ and related works. This process rests on the general assumption that a quote is more similar to the text it originates from than to the text is has been inserted into. This is primarily useful for cases where the quotational direction cannot be ascertained through purely chronological means, developing an approach to identifying quotations that is not possible absent computational analysis.
 
 The workflow and tools I show here have the potential to expand the study of source materials in Chinese corpora far beyond the use cases found within _Jinpingmei_. The work in this article is also leading into a future study of the stylistic nature of _Jinpingmei_ that illustrates how intertextuality and reliance on materials of multiple different genres influences the style of the novel.
 <!-- #endregion -->
@@ -79,10 +79,10 @@ The quality of any large-scale textual analysis depends on the digital corpus th
 
 I first clean the texts in order to facilitate the identification of shared textual materials across different digital corpora. This involves removing materials not likely present in the original works, from punctuation to errant HTML. I also normalize the Chinese character sets across documents by transforming the texts into simplified characters. This is necessary because the corpus comprises materials in both traditional and simplified character sets. Ideally, I would transform the simplified documents into traditional ones. However, because a significant number of traditional characters were simplified from multiple characters into a single simplified graph, it is difficult to automatically transform a simplified text into a traditional one. Going in the other direction loses some information but ensures a uniform, deterministic character set. I removed duplicate materials in cases where a particular edition of a text exists as multiple _digital_ copies across this corpus, but I do retain different editions of texts if they represent a unique printed piece. For most of the analysis, I also ensured that I have a rough date of composition for every text. In cases where it is not clear what dynasty a work is from, I still conduct the intertextual search across the material but leave it out of the bulk of analysis. I also excluded all editions of the _Jinpingmei_ from the comparative corpus to simplify the analysis.
 
-Given that my primary focus is on identifying the sources of _Jinpingmei_, simply knowing if a text that shares material with _Jinpingmei_ was written before the novel is enough to establish that the materials is not original to _Jinpingmei_, though not necessarily to identify its ultimate origin. As such, dating the works in the corpus becomes critical. This is complicated by the fact that the exact date of writing of _Jinpingmei_ is not clear: it was almost certainly written in the second half of the sixteenth century and finished no later than 1606, when we have evidence that full copies of manuscript versions of the text were circulating. Shen Defu discusses the existence of several full copies of the manuscript in the _Wanli yehuo bian_ 萬曆野獲編, referring to an incident that occurred in 1606 in which he discussed the novel with Yuan Hongdao. Shen references a complete copy owned by Xu Wenzhen (1503-1583), pushing likely completion back to at least the late sixteenth century (<cite id="8k51v"><a href="#zotero%7C7306679%2FMB79B7AA">(Xu, 2011)</a></cite>, 72). In including materials written roughly before, concurrently to, and after _Jinpingmei_, I can get a deep view of its influences and the impact it has on later materials. In the end, the analysis corpus I use contains 20,637 texts totaling around 1.58 billion characters. The details of the subset of works that share text with _Jinpingmei_ are described in the table below:
+Given that my primary focus is on identifying the sources of _Jinpingmei_, simply knowing if a text that shares material with _Jinpingmei_ was written before the novel is enough to establish that the materials is not original to _Jinpingmei_, though not necessarily to identify its ultimate origin. As such, dating the works in the corpus becomes critical. This is complicated by the fact that the exact date of writing of _Jinpingmei_ is not clear: it was almost certainly written in the second half of the sixteenth century and finished no later than 1606, when we have evidence that full copies of manuscript versions of the text were circulating. Shen Defu discusses the existence of several full copies of the manuscript in the _Wanli yehuo bian_ (_A Compilation of Things Captured in the Wild from the Wanli Reign_ 萬曆野獲編), referring to an incident that occurred in 1606 in which he discussed the novel with Yuan Hongdao. Shen references a complete copy owned by Xu Wenzhen (1503-1583), pushing likely completion back to at least the late sixteenth century (<cite id="8k51v"><a href="#zotero%7C7306679%2FMB79B7AA">(Xu, 2011)</a></cite>, 72). In including materials written roughly before, concurrently to, and after _Jinpingmei_, I can get a deep view of its influences and the impact it has on later materials. In the end, the analysis corpus I use contains 20,637 texts totaling around 1.58 billion characters. The details of the subset of works that share text with _Jinpingmei_ are described in the table below:
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"4575r": [{"id": "7306679/BH5CH376", "source": "zotero"}], "8k51v": [{"id": "7306679/MB79B7AA", "source": "zotero"}], "ajer5": [{"id": "7306679/F35QNXA6", "source": "zotero"}], "joo9r": [{"id": "7306679/DQWSWW9F", "source": "zotero"}], "n3mbd": [{"id": "7306679/W6A6XI55", "source": "zotero"}], "yiwba": [{"id": "7306679/FKPTBEI3", "source": "zotero"}]}} editable=true jdh={"module": "object", "object": {"source": ["Total number of texts sharing materials with Jinpingmei and their total length."]}} slideshow={"slide_type": ""} tags=["hermeneutics", "table-characters-*"] -->
+<!-- #region editable=true jdh={"module": "object", "object": {"source": ["Total number of texts sharing materials with Jinpingmei and their total length."]}} slideshow={"slide_type": ""} tags=["hermeneutics", "table-characters-*"] -->
 | Temporal Relation to _JPM_    | Number of Texts | Total Characters  |
 | -------- | ------- | ------ |
 | Predates  | 1,560 | 326,606,139 |
@@ -91,7 +91,7 @@ Given that my primary focus is on identifying the sources of _Jinpingmei_, simpl
 | Totals | 4,565 | 1,111,754,813 |
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"4575r": [{"id": "7306679/BH5CH376", "source": "zotero"}], "8k51v": [{"id": "7306679/MB79B7AA", "source": "zotero"}], "ajer5": [{"id": "7306679/F35QNXA6", "source": "zotero"}], "joo9r": [{"id": "7306679/DQWSWW9F", "source": "zotero"}], "n3mbd": [{"id": "7306679/W6A6XI55", "source": "zotero"}], "yiwba": [{"id": "7306679/FKPTBEI3", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
 The quality of the corpus heavily influences the results of any corpus-based research. Transcription errors could influence the results, for example. When comparing two different editions of the same work, it is important to remember that modern digitizers might have introduced many of the differences, so the digital editions may not completely reflect the original works. However, given the breadth of analysis, as long as the transcription errors are not systematically biased, they should not have a significant influence on the results at hand.
 
 It is also the case that the scope of analysis is limited by works represented within the corpus: I can often trace the likely source of a given chunk of text but I can only go as far back as the corpus allows, and it is entirely possible that the corpus does not contain the ultimate source. Still, the material represented by the corpus here offers an excellent starting place for comprehensively studying _Jinpingmei's_ source material.
@@ -111,7 +111,7 @@ When I perform the intertextuality analysis, I look for all sequences of at leas
 While the exact parameters I use for searching are somewhat arbitrary, I arrived at these in an attempt to find a balance between noise and comprehensive results (that is to say, I balance precision and recall). The shorter and less similar a sequence I allow, the more likely I will find random, rather than meaningful, instances of reuse. Longer and stricter parameters generate less noisy results, but often miss interesting cases of reuse. A search using these 10 character, 80 percent parameters identifies approximately 537,000 cases of textual reuse in the corpus, involving 13,300 unique quotes across 4,565 unique texts. The results are broken down depending on their temporal relationship with _Jinpingmei_ in the following table:
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"ns4la": [{"id": "7306679/P52MDVIJ", "source": "zotero"}], "p1l0n": [{"id": "7306679/ENPVXQXJ", "source": "zotero"}]}} editable=true jdh={"module": "object", "object": {"source": ["Total number of quotes by temporal relationship with _Jinpingmei_."]}} slideshow={"slide_type": ""} tags=["hermeneutics", "table-quotes-*"] -->
+<!-- #region editable=true jdh={"module": "object", "object": {"source": ["Total number of quotes by temporal relationship with _Jinpingmei_."]}} slideshow={"slide_type": ""} tags=["hermeneutics", "table-quotes-*"] -->
 | Temporal Relation to _JPM_    | Number of quotes | Unique quotes | Total characters in unique quotes |
 | -------- | ------- | ------ | ------ |
 | Predates  | 49,004 | 3,228 |82,760|
@@ -119,10 +119,10 @@ While the exact parameters I use for searching are somewhat arbitrary, I arrived
 | Postdates | 389,364 | 10,792 |742,677|
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"ns4la": [{"id": "7306679/P52MDVIJ", "source": "zotero"}], "p1l0n": [{"id": "7306679/ENPVXQXJ", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
 Some of these instances are short and extremely common; some ten characters sequences appear dozens of times per text across hundreds of texts. Others are long and uncommon, spanning hundreds of characters and shared only with one other text in the corpus. One notable phenomenon is that quotes linked to unkown/contemporary works are more common than those that predate _Jinpingmei_, but they also tend to be much shorter in length. Note that this approach does not capture extensive paraphrasing or allusions. This would be very useful to capture, but it is much more complex and computationally intensive.
 
-Following the identification of these instances of textual reuse, I sort the quotes into multiple categories: quotes that represents structural language inherent to a given genre, quotes from works that predate _Jinpingmei_, quotes from works roughly contemporary with _Jinpingmei_, quotes from works that postdate _Jinpingmei_, and quotes from works of unknown date. This basic categorization schema then lets me delve into the influences on, and of, _Jinpingmei_. To do so I am using tools derived from stylometric analysis and machine-learning to develop text classification models that establish the likely origin of textual material. I first establish the efficacy of such models and their potential pitfalls by testing them on a variety of known cases: the _Qingpingshantang huaben_, Li Kaixian’s _Cinue_ 詞謔, and the _Water Margin_, before then attempting to ascertain the likely origin of contemporary and unknown materials.
+Following the identification of these instances of textual reuse, I sort the quotes into multiple categories: quotes that represents structural language inherent to a given genre, quotes from works that predate _Jinpingmei_, quotes from works roughly contemporary with _Jinpingmei_, quotes from works that postdate _Jinpingmei_, and quotes from works of unknown date. This basic categorization schema then lets me delve into the influences on, and of, _Jinpingmei_. To do so I am using tools derived from stylometric analysis and machine-learning to develop text classification models that establish the likely origin of textual material. I first establish the efficacy of such models and their potential pitfalls by testing them on a variety of known cases: the _Qingpingshantang huaben_, Li Kaixian’s _Cixue_ (_Lyrics for Jest_ 詞謔), and the _Shuihu zhuan_, before then attempting to ascertain the likely origin of contemporary and unknown materials.
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -187,7 +187,7 @@ display(Image("media/heatmapsearlier.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-The earliest part of the novel is still the densest site of intertextuality given the extensive reliance on the _Water Margin_, but there are sections throughout that show significant overlap with earlier material. Chapter 9 in particular is extensively connected with earlier materials. The materials represented in Figure 2 are unequivocally references made within _Jinpingmei_ to earlier works.
+The earliest part of the novel is still the densest site of intertextuality given the extensive reliance on the _Shuihu zhuan_, but there are sections throughout that show significant overlap with earlier material. Chapter 9 in particular is extensively connected with earlier materials. The materials represented in Figure 2 are unequivocally references made within _Jinpingmei_ to earlier works.
 
 There are many sections of text whose origins I cannot account for so simply. The numerous sections within the novel that come from roughly contemporary works, and which are difficult to automatically establish as possible source materials, are shown in Figure 3 (I refer to any quotation as "unknown" in the figures throughout this article whenever I do not have external evidence for the direction of quotation).
 <!-- #endregion -->
@@ -212,7 +212,7 @@ display(Image("media/heatmapsunknown.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-References that can only be sourced to contemporary/unknown materials are abundant but more intermittent than those from earlier texts and computational analysis represents fascinating possibilities for understanding their likely origins. This lower incidence of reference likely derives from the very high rate of refence to known earlier works like the _Water Margin_, which dominate the intertextual space.
+References that can only be sourced to contemporary/unknown materials are abundant but more intermittent than those from earlier texts and computational analysis represents fascinating possibilities for understanding their likely origins. This lower incidence of reference likely derives from the very high rate of refence to known earlier works like the _Shuihu zhuan_, which dominate the intertextual space.
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
@@ -230,7 +230,7 @@ I then filter the texts by known date of composition, removing materials that we
 <!-- #endregion -->
 
 <!-- #region citation-manager={"citations": {"1vpsv": [{"id": "7306679/M38FG44C", "source": "zotero"}], "crjgy": [{"id": "7306679/I2V6GAHU", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} tags=["hermeneutics"] -->
-In order to create text classifiers, I need to transform natural language textual material into a numerical representation so I can process it through a computer program. There are many ways to do this, and there have been extremely rapid developments in natural language processing in recent years that allow for some very sophisticated representations. Transformer-based models have come to dominate this space as of early 2023 when I conducted these experiments. However, my philosophical approach to developing algorithms is to use the simplest methods possible that provide reliable results. As such, I turn to “bag-of-words” representations of texts, or more precisely "bag of n-consecutive characters in a row (also known as _n_-grams)," where n is normally one (<cite id="1vpsv"><a href="#zotero%7C7306679%2FM38FG44C">(Underwood, 2013)</a></cite>). Each text fragment I study is represented as a vector, or list of numbers, whose individual dimensions consist of simple _n_-gram frequencies. I use the _n_-grams that appear most frequently across the entire corpus to represent the works. I use the implementation of the TfidfVectorizor found in the sci-kit learn Python library (<cite id="crjgy"><a href="#zotero%7C7306679%2FI2V6GAHU">(<i>Sklearn.Feature_extraction.Text.TfidfVectorizer</i>, n.d.)</a></cite>). This takes care of the vectorization for me while also normalizing the vectors in a way that facilitates the process of training machine learning models. This transforms the textual differences among documents into spatial differences that a variety of algorithms can easily measure and compare.
+In order to create text classifiers, I need to transform natural language textual material into a numerical representation so I can process it through a computer program. There are many ways to do this, and there have been extremely rapid developments in natural language processing in recent years that allow for some very sophisticated representations. Transformer-based models have come to dominate this space as of early 2023 when I conducted these experiments. However, my philosophical approach to developing algorithms is to use the simplest methods possible that provide reliable results. As such, I turn to “bag-of-words” representations of texts, or more precisely "bag of n-consecutive characters in a row (also known as _n_-grams)," where _n_ is normally one (<cite id="1vpsv"><a href="#zotero%7C7306679%2FM38FG44C">(Underwood, 2013)</a></cite>). Each text fragment I study is represented as a vector, or list of numbers, whose individual dimensions consist of simple _n_-gram frequencies. I use the _n_-grams that appear most frequently across the entire corpus to represent the works. I use the implementation of the TfidfVectorizor found in the sci-kit learn Python library (<cite id="crjgy"><a href="#zotero%7C7306679%2FI2V6GAHU">(<i>Sklearn.Feature_extraction.Text.TfidfVectorizer</i>, n.d.)</a></cite>). This takes care of the vectorization for me while also normalizing the vectors in a way that facilitates the process of training machine learning models. This transforms the textual differences among documents into spatial differences that a variety of algorithms can easily measure and compare.
 
 Once texts have been vectorized, I can use them to train text-classification algorithms to predict the likely point of origin of a particular quote. There are multiple criticisms that rightly emerge from such an approach. Fundamentally, simply looking at _n_-gram frequencies disregards syntactic information and elides the complex nature of words in Chinese. Yet for the downstream task of developing models to identify a quote’s likely textual origin, I will show that such a basic representation performs well.
 <!-- #endregion -->
@@ -778,11 +778,11 @@ This figure demonstrates that the models are biased toward the document in which
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-## _Jinpingmei_ vs. _Water Margin_
+## _Jinpingmei_ vs. _Shuihu zhuan_
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-The proof of concept above illustrates that under ideal conditions, it is possible to identify the origins of intertextuality based on apparent textual similarity. The most important intertextual cases within _Jinpingmei_, however, sometimes present us with less ideal circumstances. As I noted earlier in this article, idle readers and scholars alike have noted that _Water Margin_ played an enormously influential role in the development of _Jinpingmei_. As such, the procedure I outlined above for the Wei Zhongxian texts will probably be effective, but the shared generic features of _Jinpingmei_ and _Water Margin_ may complicate matters. These are both novels and do not have the distinct generic features that effectively divide the _Yujing xintan_ from the _Jingshi yinyang meng_. As Figure 6 shows, when I visualize the stylistic difference among randomly selected document vectors from _Jinpingmei_ and _Water Margin_, there is much more overlap between the two texts. This suggests that their distributions of frequent terms found in these novels are more similar to each other than what is seen in the Wei texts.
+The proof of concept above illustrates that under ideal conditions, it is possible to identify the origins of intertextuality based on apparent textual similarity. The most important intertextual cases within _Jinpingmei_, however, sometimes present us with less ideal circumstances. As I noted earlier in this article, idle readers and scholars alike have noted that _Shuihu zhuan_ played an enormously influential role in the development of _Jinpingmei_. As such, the procedure I outlined above for the Wei Zhongxian texts will probably be effective, but the shared generic features of _Jinpingmei_ and _Shuihu zhuan_ may complicate matters. These are both novels and do not have the distinct generic features that effectively divide the _Yujing xintan_ from the _Jingshi yinyang meng_. As Figure 6 shows, when I visualize the stylistic difference among randomly selected document vectors from _Jinpingmei_ and _Shuihu zhuan_, there is much more overlap between the two texts. This suggests that their distributions of frequent terms found in these novels are more similar to each other than what is seen in the Wei texts.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["hermeneutics"]
@@ -791,7 +791,7 @@ jpm_id = "25272"
 jpm_label = "Jinpingmei"
 
 shuihu_id = "25124"
-shuihu_label = "Water Margin"
+shuihu_label = "Shuihu zhuan"
 
 # get intertext data
 jpm_intertext_data = get_alignment_data("jpm_alignment.tsv")
@@ -812,7 +812,7 @@ jpmsh_vectorizer, jpmsh_frequency_vectors = vectorize_texts(jpmsh_sections,
 ```python editable=true slideshow={"slide_type": ""} tags=["hermeneutics"]
 # Generate figure
 # generate_PCA_viz(jpmsh_frequency_vectors, jpmsh_labels, jpmsh_vectorizer,
-#                 "PCA showing style of Jinpingmei vs. Water Margin")
+#                 "PCA showing style of Jinpingmei vs. Shuihu zhuan")
 ```
 
 ```python editable=true slideshow={"slide_type": ""} tags=["figure-pcajpmwm-*"]
@@ -824,7 +824,7 @@ metadata={
         "object":{
             "type":"image",
             "source":[
-                "PCA showing style of _Jinpingmei_ vs. _Water Margin_"
+                "PCA showing style of _Jinpingmei_ vs. _Shuihu zhuan_"
             ]
 
         }
@@ -835,14 +835,14 @@ display(Image("media/pcajpmvswatermargin.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-Again, significant variance is hidden from view in these types of visualizations. Here the first two principal components only capture the first 4.8 and 3 percent of variance respectively, much lower than the variance I capture in the _Yujing_ vs. _Jingshi_ comparison. But the text classifier does not operate on the principal components and can leverage all of the untransformed data. Somewhat surprisingly, the _Jinpingmei_ vs. _Water Margin_ model’s accuracy is admirably high. Using ten-fold cross validation, the models are 91 percent accurate. The following confusion table illustrates the results of applying the model to the validation set:
+Again, significant variance is hidden from view in these types of visualizations. Here the first two principal components only capture the first 4.8 and 3 percent of variance respectively, much lower than the variance I capture in the _Yujing_ vs. _Jingshi_ comparison. But the text classifier does not operate on the principal components and can leverage all of the untransformed data. Somewhat surprisingly, the _Jinpingmei_ vs. _Shuihu zhuan_ model’s accuracy is admirably high. Using ten-fold cross validation, the models are 91 percent accurate. The following confusion table illustrates the results of applying the model to the validation set:
 <!-- #endregion -->
 
 <!-- #region editable=true jdh={"module": "object", "object": {"source": ["Confusion matrix showing accuracy of model."]}} slideshow={"slide_type": ""} tags=["table-cmjpmvwm-*"] -->
-Confusion Matrix|Actual _Jinpingmei_|Actual _Water Margin_
+Confusion Matrix|Actual _Jinpingmei_|Actual _Shuihu zhuan_
 ---|---|---
 Predicted _Jinpingmei_|1127|122
-Predicted _Water Margin_|100|1151
+Predicted _Shuihu zhuan_|100|1151
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -855,13 +855,13 @@ Yet despite the excellent performance of the model, its accuracy is much less im
 jpmsh_clf = train_and_test_model(jpmsh_frequency_vectors, jpmsh_labels, test_size=0.25, print_results=False)
 
 # Specify the known source for model evaluation
-jpmsh_known_source = "Water Margin"
+jpmsh_known_source = "Shuihu zhuan"
 # run_multiple_models([jpm_id, shuihu_id],
 #                     [jpm_label, shuihu_label],
 #                     jpmsh_vectorizer, jpmsh_clf,
 #                     jpm_intertext_data,
 #                     jpmsh_known_source,
-#                     "Percent of Water Margin predictions by shortest length of tested quote")
+#                     "Percent of Shuihu zhuan predictions by shortest length of tested quote")
 ```
 
 ```python editable=true slideshow={"slide_type": ""} tags=["figure-watermarginpred-*"]
@@ -873,7 +873,7 @@ metadata={
         "object":{
             "type":"image",
             "source":[
-                "Percent of Water Margin predictions by shortest length of quote"
+                "Percent of Shuihu zhuan predictions by shortest length of quote"
             ]
 
         }
@@ -884,7 +884,7 @@ display(Image("media/watermarginpredbylength.png", width=1000), metadata=metadat
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-The overall results of the model do point us to _Water Margin_ as the likely progenitor of the shared materials, but the source of inaccuracies in the model is also very instructive. The large amount of error largely stems from the complex relationship between the two texts. First, we can expect some noise simply because the exact version of the _Water Margin_ the author likely used to compose _Jinpingmei_ is not present in the corpus (and does not seem to exist anymore). Additionally, _Jinpingmei_ is a novel centered on several important people who also appear in _Water Margin_. Most prominent is Ximen Qing 西門慶, the anti-hero of _Jinpingmei_. He dominates the narrative for the first 79 chapters of _Jinpingmei_, at which point he dies. Pan Jinlian 潘金蓮, the woman whose wooing occupies the first section of _Jinpingmei_ and whose presence dominates the narrative of the novel as a whole, also appears in _Water Margin_. In _Water Margin_, Wu Song kills Ximen Qing and Pan Jinlian at the offset of their relationship. As such, Ximen and Pan only appear in a few chapters of _Water Margin_. _Jinpingmei’s_ author copies these chapters nearly verbatim but alters the story such that Ximen Qing and Pan Jinlian initially escape Wu’s wrath. They each go on to appear in dozens of chapters. Given this, a randomly selected piece of text from _Water Margin_ is not likely to mention either figure. On the other hand, random text from _Jinpingmei_ is very likely to mention one or both of them. Furthermore, nearly all of their mentions in _Water Margin_ are concentrated in intertextual moments, so the model tends to associate them with _Jinpingmei_. This phenomenon appears in the loadings of the _Jinpingmei_ vs. _Water Margin_ PCA, where the Chinese characters in Ximen Qing, Pan Jinlian, and select other peoples’ names play an important role in distinguishing the two novels.
+The overall results of the model do point us to _Shuihu zhuan_ as the likely progenitor of the shared materials, but the source of inaccuracies in the model is also very instructive. The large amount of error largely stems from the complex relationship between the two texts. First, we can expect some noise simply because the exact version of the _Shuihu zhuan_ the author likely used to compose _Jinpingmei_ is not present in the corpus (and does not seem to exist anymore). Additionally, _Jinpingmei_ is a novel centered on several important people who also appear in _Shuihu zhuan_. Most prominent is Ximen Qing 西門慶, the anti-hero of _Jinpingmei_. He dominates the narrative for the first 79 chapters of _Jinpingmei_, at which point he dies. Pan Jinlian 潘金蓮, the woman whose wooing occupies the first section of _Jinpingmei_ and whose presence dominates the narrative of the novel as a whole, also appears in _Shuihu zhuan_. In _Shuihu zhuan_, Wu Song kills Ximen Qing and Pan Jinlian at the offset of their relationship. As such, Ximen and Pan only appear in a few chapters of _Shuihu zhuan_. _Jinpingmei’s_ author copies these chapters nearly verbatim but alters the story such that Ximen Qing and Pan Jinlian initially escape Wu’s wrath. They each go on to appear in dozens of chapters. Given this, a randomly selected piece of text from _Shuihu zhuan_ is not likely to mention either figure. On the other hand, random text from _Jinpingmei_ is very likely to mention one or both of them. Furthermore, nearly all of their mentions in _Shuihu zhuan_ are concentrated in intertextual moments, so the model tends to associate them with _Jinpingmei_. This phenomenon appears in the loadings of the _Jinpingmei_ vs. _Shuihu zhuan_ PCA, where the Chinese characters in Ximen Qing, Pan Jinlian, and select other peoples’ names play an important role in distinguishing the two novels.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["figure-pcajpmvwmloadings-*"]
@@ -896,7 +896,7 @@ metadata={
         "object":{
             "type":"image",
             "source":[
-                "Loadings from PCA showing style of Jinpingmei vs. Water Margin"
+                "Loadings from PCA showing style of Jinpingmei vs. _Shuihu zhuan_"
             ]
 
         }
@@ -923,13 +923,13 @@ jpmsh_vectorizer, jpmsh_frequency_vectors = vectorize_texts(jpmsh_sections,
                                                             stop_words=jpm_stopwords)
 
 # Specify the known source for model evaluation
-jpmsh_known_source = "Water Margin"
+jpmsh_known_source = "Shuihu zhuan"
 # run_multiple_models([jpm_id, shuihu_id],
 #                     [jpm_label, shuihu_label],
 #                     jpmsh_vectorizer, jpmsh_clf,
 #                     jpm_intertext_data,
 #                     jpmsh_known_source,
-#                     "Percent of Water Margin predictions by shortest length of tested quote minus stop words")
+#                     "Percent of Shuihu zhuan predictions by shortest length of tested quote minus stop words")
 ```
 
 ```python editable=true slideshow={"slide_type": ""} tags=["figure-watermarginns-*"]
@@ -941,7 +941,7 @@ metadata={
         "object":{
             "type":"image",
             "source":[
-                "Percent of Water Margin predictions by shortest length of quote minus stop words"
+                "Percent of Shuihu zhuan predictions by shortest length of quote minus stop words"
             ]
 
         }
@@ -952,33 +952,33 @@ display(Image("./media/watermarginpredbylengthnostopwords.png", width=1000), met
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-## Jinpingmei vs. Li Kaixian’s Cinüe
+## _Jinpingmei_ vs. Li Kaixian’s _Cixue_
 <!-- #endregion -->
 
 <!-- #region citation-manager={"citations": {"2pkhp": [{"id": "7306679/GGDJFCUZ", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} -->
-Another intriguing example of intertextuality exists between _Jinpingmei_ and Li Kaixian’s work _Cinüe_ (Jesting on Lyrics 詞謔), a piece of dramatic criticism. These two works share a smattering of text throughout _Jinpingmei_, but one scene of particular importance shared between the two occurs in chapter 71 of _Jinpingmei_, in which Ximen Qing and He Xin the Eunuch Director listen to a rather extended song suite (for an English translation see (<cite id="2pkhp"><a href="#zotero%7C7306679%2FGGDJFCUZ">(Roy, 2011)</a></cite>, 309). Establishing the directionality of quotation is particularly interesting if it turns out the _Cinüe_ is quoting from _Jinpingmei_; this might then serve as evidence that Li Kaixian is a prime candidate for the likely identity of the author of _Jingpingmei_. Some scholars already suspect Li may be the author, but he passed away in 1568, well before there is evidence of _Jinpingmei_ circulating. Beyond its implications for authorship, this would also potentially push the earliest date of composition of the novel back in time substantially.
+Another intriguing example of intertextuality exists between _Jinpingmei_ and Li Kaixian’s work _Cixue_, a piece of dramatic criticism. These two works share a smattering of text throughout _Jinpingmei_, but one scene of particular importance shared between the two occurs in chapter 71 of _Jinpingmei_, in which Ximen Qing and He Xin the Eunuch Director listen to a rather extended song suite (for an English translation see (<cite id="2pkhp"><a href="#zotero%7C7306679%2FGGDJFCUZ">(Roy, 2011)</a></cite>, 309). Establishing the directionality of quotation is particularly interesting if it turns out the _Cixue_ is quoting from _Jinpingmei_; this might then serve as evidence that Li Kaixian is a prime candidate for the likely identity of the author of _Jingpingmei_. Some scholars already suspect Li may be the author, but he passed away in 1568, well before there is evidence of _Jinpingmei_ circulating. Beyond its implications for authorship, this would also potentially push the earliest date of composition of the novel back in time substantially.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["hermeneutics"]
 # Figure 8 generation
-cinue_id = "21285"
-cinue_label = "Cinue"
+cixue_id = "21285"
+cixue_label = "Cixue"
 
 # Load and then randomly divide the two texts
-jpmcn_sections, jpmcn_labels = get_text_and_labels([jpm_id, cinue_id],
-                                               [jpm_label, cinue_label],
+jpmcx_sections, jpmcx_labels = get_text_and_labels([jpm_id, cixue_id],
+                                               [jpm_label, cixue_label],
                                                jpm_intertext_data, n_sections,length_range)
 
 # Vectorize the texts
-jpmcn_vectorizer, jpmcn_frequency_vectors = vectorize_texts(jpmcn_sections,
+jpmcx_vectorizer, jpmcx_frequency_vectors = vectorize_texts(jpmcx_sections,
                                                             max_features=max_features,
                                                             use_idf=use_idf,
                                                             ngram_range=ngram_range,
                                                             stop_words=jpm_stopwords)
 
 # Generate Figure 8
-# generate_PCA_viz(jpmcn_frequency_vectors, jpmcn_labels, jpmcn_vectorizer,
-#                 "PCA showing style of Jinpingmei vs. Cinue")
+# generate_PCA_viz(jpmcx_frequency_vectors, jpmcx_labels, jpmcx_vectorizer,
+#                 "PCA showing style of Jinpingmei vs. Cixue")
 ```
 
 ```python editable=true slideshow={"slide_type": ""} tags=["figure-pcajpmcn-*"]
@@ -990,7 +990,7 @@ metadata={
         "object":{
             "type":"image",
             "source":[
-                "PCA showing style of _Jinpingmei_ vs _Cinüe_"
+                "PCA showing style of _Jinpingmei_ vs _Cixue_"
             ]
 
         }
@@ -1001,14 +1001,14 @@ display(Image("media/pcajpmcn.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-This figure shows that the style of _Jinpingmei_ and _Cinüe_ is distinct. There is some amount of stylistic overlap, but not nearly so much as seen between _Jinpingmei_ and _Water Margin_. Here, the algorithm produces a model that is 94 percent accurate with a standard deviation of 3 percent. The fully trained model is 95 percent accurate and results in the following confusion matrix.
+This figure shows that the style of _Jinpingmei_ and _Cixue_ is distinct. There is some amount of stylistic overlap, but not nearly so much as seen between _Jinpingmei_ and _Shuihu zhuan_. Here, the algorithm produces a model that is 94 percent accurate with a standard deviation of 3 percent. The fully trained model is 95 percent accurate and results in the following confusion matrix.
 <!-- #endregion -->
 
 <!-- #region editable=true jdh={"module": "object", "object": {"source": ["Confusion matrix showing accuracy of model."]}} slideshow={"slide_type": ""} tags=["table-*"] -->
- Confusion Matrix|Actual _Jinpingmei_|Actual _Cinüe_
+ Confusion Matrix|Actual _Jinpingmei_|Actual _Cixue_
 ---|---|---
 Predicted _Jinpingmei_|133|9
-Predicted _Cinüe_|2|106
+Predicted _Cixue_|2|106
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -1016,9 +1016,9 @@ Following the same process as above I can also train and test a number of models
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["hermeneutics"]
-jpmcn_clf = train_and_test_model(jpmcn_frequency_vectors, jpmcn_labels, test_size=0.25, print_results=False)
+jpmcx_clf = train_and_test_model(jpmcx_frequency_vectors, jpmcx_labels, test_size=0.25, print_results=False)
 
-jpmcn_known_source = "Cinue"
+jpmcx_known_source = "Cixue"
 # run_multiple_models([jpm_id, cinue_id],
 #                     [jpm_label, cinue_label],
 #                     jpmcn_vectorizer, jpmcn_clf,
@@ -1046,7 +1046,7 @@ display(Image("media/cinuepredbylength.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-The model consistently predicts that the origin of the shared quotes are from the _Cinüe_ rather than from _Jinpingmei_. This is disappointing in terms of the potential authorship of _Jinpingmei_, because we cannot use this as evidence that Li had a copy of the novel. However, it comports well with the expectations we should have after considering that the _Cinüe_ is a piece of dramatic criticism and upon observing that the intertextuality algorithm reveals even deeper layers of quotation occurring in these sections. There is also the slight complication of genre here: it may be that the algorithm focuses heavily on genre (the _Cinüe_ being full of poetry and drama and _Jinpingmei_ mostly consisting of prose). Given the layered nature of my approach, this doesn’t present too much of an issue in this particular case because I can trace this material further into the past, but it could potentially present roadblocks elsewhere.
+The model consistently predicts that the origin of the shared quotes are from the _Cixue_ rather than from _Jinpingmei_. This is disappointing in terms of the potential authorship of _Jinpingmei_, because we cannot use this as evidence that Li had a copy of the novel. However, it comports well with the expectations we should have after considering that the _Cixue_ is a piece of dramatic criticism and upon observing that the intertextuality algorithm reveals even deeper layers of quotation occurring in these sections. There is also the slight complication of genre here: it may be that the algorithm focuses heavily on genre (the _Cixue_ being full of poetry and drama and _Jinpingmei_ mostly consisting of prose). Given the layered nature of my approach, this doesn’t present too much of an issue in this particular case because I can trace this material further into the past, but it could potentially present roadblocks elsewhere.
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -1054,7 +1054,7 @@ The model consistently predicts that the origin of the shared quotes are from th
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-The final step I will take in evaluating this approach is to build models to compare _Jinpingmei_ in a pair-wise fashion against every earlier text in the corpus. This means that I train an independent model for each comparison  (so _Jinpingmei_ vs. _Shuihu zhuan_, _Jinpingmei_ vs. _Cinüe_, _Jinpingmei_ vs. _Qingpingshantang huaben_ and so on). The main utility of this approach is ease of interpretability and accuracy. Multi-class models become much more difficult to work with as the number of classes increase. I should note that training so many models is somewhat computationally intense, but the method remains relatively scalable. Each pair-wise classifier takes somewhere between .005 seconds and 2 seconds to train inside this notebook environment on a 2024 MacBook Pro. There is significant room for optimization if I need to perform larger-scale analysis.
+The final step I will take in evaluating this approach is to build models to compare _Jinpingmei_ in a pair-wise fashion against every earlier text in the corpus. This means that I train an independent model for each comparison  (so _Jinpingmei_ vs. _Shuihu zhuan_, _Jinpingmei_ vs. _Cixue_, _Jinpingmei_ vs. _Qingpingshantang huaben_ and so on). The main utility of this approach is ease of interpretability and accuracy. Multi-class models become much more difficult to work with as the number of classes increase. I should note that training so many models is somewhat computationally intense, but the method remains relatively scalable. Each pair-wise classifier takes somewhere between .005 seconds and 2 seconds to train inside this notebook environment on a 2024 MacBook Pro. There is significant room for optimization if I need to perform larger-scale analysis.
 
 In doing so, I can assess general performance and highlight drawbacks to this approach. Figure 10 shows how each of these models performs on cases of material known to predate _Jinpingmei_.
 <!-- #endregion -->
@@ -1245,25 +1245,25 @@ metadata={
 display(Image("media/predoriginpredate.png", width=1000), metadata=metadata)
 ```
 
-<!-- #region citation-manager={"citations": {"a62lu": [{"id": "7306679/GGDJFCUZ", "source": "zotero"}], "b3atq": [{"id": "7306679/GGDJFCUZ", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} -->
+<!-- #region citation-manager={"citations": {"3otk8": [{"id": "7306679/4A3T8BHX", "source": "zotero"}], "a62lu": [{"id": "7306679/GGDJFCUZ", "source": "zotero"}], "b3atq": [{"id": "7306679/GGDJFCUZ", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} -->
 In the above figure, each dot represents a comparison between all quotes shared between _Jinpingmei_ and an earlier text. The y-axis shows the average decision. 0 indicates that the model predicts that all shared quotes come from _Jinpingmei_ and 1 indicates that all appear to come from the opposing text, and .5 indicates that half the model’s predictions go one way and half go the other. Importantly, this is not to say that in cases where a dot falls at .5 that half the quotes _actually_ come from one text and half from the other. Rather, the model is simply wrong half the time. An alternative explanation may be that in half the cases an author edited the shared quotes enough for the model to judge them as more similar to the quoting text than as their real source. The x-axis shows the average confidence the model has in the decisions it makes. Technically, this is the average of how far all shared quotes are from the boundary the model uses to separate the two classes. Negative numbers indicate the model evaluates a quote as from _Jinpingmei_ and positive numbers indicate that it evaluates the quote to be from the other text. In essence, the models judge works in the lower left likely to be quoting from _Jinpingmei_ and those in the upper right to be quoted by it. The total number of quotes involved in the decision also has an important impact, as the more quotes the models can operate on, the more we can rely on the results. It is far more informative if the model judges 70 percent of 400 shared quotes to be from one text than if it guesses that 100 percent of 2 quotes are from another.
 
 When I amalgamate these results and establish that results above .5 are correct, the models work well and accurately predicts that quotes from 101 of 114 texts are more likely to be the source of the quotes than _Jinpingmei_ where the evaluated quotes are at least 25 characters long. The model incorrectly predicts that ten texts quote _Jinpingmei_, and the results are evenly split for another two texts. This is decent performance but slightly lower than I expected given the performance of the models when I was conducting cross-validation.
 
-Importantly, cases of mistaken origin are not random. Many stem from quotes shared widely across the corpus. Many mistaken quotations occur when a quote is not original to either _Jinpingmei_ or the other text. Fortunately, these will often have a clearer origin elsewhere in the corpus. Genre also causes some issues, as quotations from poetry are among the more difficult to pin down. Among the missed cases include a poem found in a commentary on a Daoist text called the _Taishang laojun shuochang qingjing jingzhu_ (Commentary on the Classic of Everlasting Purity and Tranquility as told by Supreme Lord Lao 太上老君說常清靜經註).
+Importantly, cases of mistaken origin are not random. Many stem from quotes shared widely across the corpus. Many mistaken quotations occur when a quote is not original to either _Jinpingmei_ or the other text. Fortunately, these will often have a clearer origin elsewhere in the corpus. Genre also causes some issues, as quotations from poetry are among the more difficult to pin down. Among the missed cases include a poem found in a commentary on a Daoist text called the _Taishang laojun shuochang qingjing jingzhu_ (_Commentary on the Classic of Everlasting Purity and Tranquility as told by Supreme Lord Lao_ 太上老君說常清靜經註).
 
 >The beauty of sixteen has a body as smooth as cream, Her loins are a sword with which to slay the unwary. Though no one may see your head fall from your neck, Before you know it, the Marrow of your bones is sapped (<cite id="b3atq"><a href="#zotero%7C7306679%2FGGDJFCUZ">(Roy, 2011)</a></cite>, 640). 二八佳人體似酥, 腰間仗劍斬愚夫; 雖然不見人頭落, 暗裏教君骨髓枯。
 
-The only difference between the two versions is the _Taishang laojun_ version uses _fenming_ ("evident" 分明) instead of _suiran_ ("though" 雖然). In this case, the tone and content of the poem line up clearly with _Jinpingmei_ and less so with the broader context of _Taishang laojun_. Additionally, this poem is found in twenty-eight works in the corpus, including Shuihu zhuan. It can ultimately be traced to the Tang and is found in the Quantangshi (Complete Poems of the Tang Dynasty 全唐詩) under works by Lü Dongbin 呂洞賓 (fl. 9th century).
+The only difference between the two versions is the _Taishang laojun_ version uses _fenming_ ("evident" 分明) instead of _suiran_ ("though" 雖然). In this case, the tone and content of the poem line up clearly with _Jinpingmei_ and less so with the broader context of _Taishang laojun_. Additionally, this poem is found in twenty-eight works in the corpus, including Shuihu zhuan. It can ultimately be traced to the Tang and is found in the _Quantangshi_ (_Complete Poems of the Tang Dynasty_ 全唐詩) under works by Lü Dongbin 呂洞賓 (fl. 9th century).
 
-The models also mistakenly attributes the single quotation from the _Western Chamber_ (_Xixiang ji_ 西廂記) in the results to _Jinpingmei_. This quote appears in the midst of a song suite that is clearly a pastiche of the types of songs present in _Western Chamber_. This is possibly because there are several Chinese characters that appear in characters' names:
+The models also mistakenly attributes the single quotation from the _Xixiang ji_ (_Western Chamber_ 西廂記) in the results to _Jinpingmei_. This quote appears in the midst of a song suite that is clearly a pastiche of the types of songs present in _Xixiang ji_. This is possibly because there are several Chinese characters that appear in characters' names:
 >...gold lamé curtains depicting mandarin ducks in the moonlight; And folding jade screens adorned with kingfishers enjoying the breezes of spring. The music of wedding bells, Will be accompanied with phoenix flutes and ivory clappers, Patterned cithara and phoenix pipes (<cite id="a62lu"><a href="#zotero%7C7306679%2FGGDJFCUZ">(Roy, 2011)</a></cite>, 432). 鴛鴦夜月銷金帳，孔雀春風軟玉屏。合歡令,更有那鳳簫象板錦瑟鷥笙。
 
-Despite a few clear misses, there are very few cases where this approach completely fails to identify a plausible earlier text for shared quotes that appear in earlier works, but individual cases still present some issues. The accuracy is interestingly variable when looking at different versions of the _Water Margin_. Most editions tend to sit relatively close to the decision border, with the 100 chapter edition being the most likely to be mistaken for quoting _Jinpingmei_. This may point to valuable directions for future research: some editions may be closer to the one the author originally used, while others may have been produced after _Jinpingmei_ and are in fact being influenced by it (although at this point this remains speculative).
+Despite a few clear misses, there are very few cases where this approach completely fails to identify a plausible earlier text for shared quotes that appear in earlier works, but individual cases still present some issues. The accuracy is interestingly variable when looking at different versions of the _Shuihu zhuan_. Most editions tend to sit relatively close to the decision border, with the 100 chapter edition being the most likely to be mistaken for quoting _Jinpingmei_. This may point to valuable directions for future research: some editions may be closer to the one the author originally used, while others may have been produced after _Jinpingmei_ and are in fact being influenced by it (although at this point this remains speculative).
 
 The complex results illustrated in this figure highlight that one cannot treat intertextuality in a naïve fashion and simply assume that the models will be infallible. The model can only tell us, based on the input vectors, which document a string appears most similar to, even when the actual origin of the quote might be represented elsewhere in the corpus. It makes sense to find ways of increasing the fidelity of the results. One option is to train a multi-class model that aims to ascribe each quote to a particular text within the corpus. While an important step to take eventually, this is not necessarily the best first approach. As the number of classes in a model increases, the more complex, and often less reliable, the model becomes.
 
-Instead, a useful first step in trying to trace the ultimate source of quotes within the novel might be to narrow the search space as much as possible before even building any models. One heuristic for dealing with heavily layered text is to follow Hanan’s example by looking for instances of the overlap and identifying the work where the longest matching quotes appear. If four different texts all share the same substrings, but one of them encompasses all the rest, this is likely to be the actual origin of the quote. Thus, it may not even be necessary to compare _Jinpingmei_ against a text if it is clearly not the origin of the material. The quote from the _Qingpingshantang huaben_ that appears at the beginning of this article is a good example. The intertextuality algorithm identifies three texts in which the opening poem appears: the _Qingpingshantang huaben_, the _Quansongci_ (Complete Lyric Poems of the Song Dynasty 全宋詞), and the _Shuofu_ (Purlieus of Exposition 說郛), a translation by Victor Mair via Christopher Atwood. Yet the _Qingpingshantang huaben_ quote continues beyond the poem and then later intersects with quotes from even more works, as shown in Figure 11. Ideally, I would simply compare _Jinpingmei_ against _Qingpingshantang huaben_ and dispense with the comparisons with the other works.
+Instead, a useful first step in trying to trace the ultimate source of quotes within the novel might be to narrow the search space as much as possible before even building any models. One heuristic for dealing with heavily layered text is to follow Hanan’s example by looking for instances of the overlap and identifying the work where the longest matching quotes appear. If four different texts all share the same substrings, but one of them encompasses all the rest, this is likely to be the actual origin of the quote. Thus, it may not even be necessary to compare _Jinpingmei_ against a text if it is clearly not the origin of the material. The quote from the _Qingpingshantang huaben_ that appears at the beginning of this article is a good example. The intertextuality algorithm identifies three texts in which the opening poem appears: the _Qingpingshantang huaben_, the _Quansongci_ (_Complete Lyric Poems of the Song Dynasty_ 全宋詞), and the _Shuofu_ (_Purlieus of Exposition_ 說郛), a translation by Victor Mair via Christopher Atwood (<cite id="3otk8"><a href="#zotero%7C7306679%2F4A3T8BHX">(Atwood, 2017)</a></cite>, 1). Yet the _Qingpingshantang huaben_ quote continues beyond the poem and then later intersects with quotes from even more works, as shown in Figure 11. Ideally, I would simply compare _Jinpingmei_ against _Qingpingshantang huaben_ and dispense with the comparisons with the other works.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""} tags=["figure-layeredintertext-*"]
@@ -1360,13 +1360,13 @@ display(Image("media/predoriginunknown.png", width=1000), metadata=metadata)
 ```
 
 <!-- #region citation-manager={"citations": {"fwz9p": [{"id": "7306679/QC8JBD8E", "source": "zotero"}], "il2z2": [{"id": "7306679/PZUHDBXR", "source": "zotero"}], "pmwfg": [{"id": "7306679/W5882J7M", "source": "zotero"}]}} editable=true slideshow={"slide_type": ""} -->
-This source map is instructive but requires some careful parsing to further our understanding of _Jinpingmei_’s sources. It shows that most contemporary materials are likely sources for the novel, and a careful study of these works will help map out a concrete network of sources. In most of the cases where the model attributes a quote to _Jinpingmei_, it is a poem with _highly_ sexual content. Spending time with these results also helps me identify missing or inaccurate metadata. For example, the model tests the relationship between the _Baduanjin_ 八段錦 collection of short stories and _Jinpingmei_, revealing the former’s clear dependence on the latter.
+This source map is instructive but requires some careful parsing to further our understanding of _Jinpingmei's_ sources. It shows that most contemporary materials are likely sources for the novel, and a careful study of these works will help map out a concrete network of sources. In most of the cases where the model attributes a quote to _Jinpingmei_, it is a poem with _highly_ sexual content. Spending time with these results also helps me identify missing or inaccurate metadata. For example, the model tests the relationship between the _Baduanjin_ (_Eight-section Brocade_ 八段錦) collection of short stories and _Jinpingmei_, revealing the former’s clear dependence on the latter.
 
 >After having failed to locate their relatives, and being unable to locate a dwelling on such short notice, they asked our neighbor Old Man Fan if they could stay here for two or three days before moving on. I was planning to report this to you sir, but you have asked me about it before I was able to do so (<cite id="fwz9p"><a href="#zotero%7C7306679%2FQC8JBD8E">(Roy, 2013)</a></cite>, 357). 一時間無尋房住, 央此間鄰居範老來說, 暫住兩三日便去。正欲報知官人, 不想官人來。
 
-This sentence is repeated verbatim with only two minor character variations in _Baduanjin_ and flanked on both sides by many shorter matches that extend across multiple paragraphs. The results are fractured because the people featured in the stories are different, causing the intertextuality algorithm to return multiple shorter substrings. The _Baduanjin_ story is itself likely based on a story from Feng Menglong’s 馮夢龍 _Yushi mingyan_ (Stories to Enlighten the World 喻世明言), which also clearly copies from _Jinpingmei_.
+This sentence is repeated verbatim with only two minor character variations in _Baduanjin_ and flanked on both sides by many shorter matches that extend across multiple paragraphs. The results are fractured because the people featured in the stories are different, causing the intertextuality algorithm to return multiple shorter substrings. The _Baduanjin_ story is itself likely based on a story from Feng Menglong’s 馮夢龍 _Yushi mingyan_ (_Stories to Enlighten the World_ 喻世明言), which also clearly copies from _Jinpingmei_.
 
-In essence, I can rapidly identify the echos of _Jinpingmei_ in later works and move the _Baduanjin_ from the indeterminate pile into the “clearly after _Jinpingmei_” pile, despite the lack of clarity surrounding its publication history. The _Database of Premodern  Chinese Popular Literature_ (_Zhongguo suwen ku_ 中國俗文庫) lists the _Baduanjin_ as a Ming text (<cite id="il2z2"><a href="#zotero%7C7306679%2FPZUHDBXR">(<i>Zhongguo Su Wen Ku</i>, n.d.)</a></cite>), while the _Zhongguo tongsuxiaoshuo zongmu_ implies it is a Qing work (<cite id="pmwfg"><a href="#zotero%7C7306679%2FW5882J7M">(<i>Zhongguo tongsu xiaoshuo zongmu tiyao</i>, 1990)</a></cite>, 638). _Baduanjin_ is a Qing production while others view it as a possible late Ming work.
+In essence, I can rapidly identify the echos of _Jinpingmei_ in later works and move the _Baduanjin_ from the indeterminate pile into the “clearly after _Jinpingmei_” pile, despite the lack of clarity surrounding its publication history. The _Zhongguo suwen ku_ (_Database of Premodern Chinese Popular Literature_ 中國俗文庫) lists the _Baduanjin_ as a Ming text (<cite id="il2z2"><a href="#zotero%7C7306679%2FPZUHDBXR">(Liu, 2011)</a></cite>), while the _Zhongguo tongsu xiaoshuo zongmu tiyao_ (_Catalog of Summmaries of Chinese Vernacular Novels_ 中國通俗小說總目提要) implies it is a Qing work (<cite id="pmwfg"><a href="#zotero%7C7306679%2FW5882J7M">(<i>Zhongguo Tongsu Xiaoshuo Zongmu</i>, 1990)</a></cite>, 638).
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -1396,7 +1396,7 @@ Because of the complexity of the code and slow speed of processing, I have inclu
 ```python editable=true slideshow={"slide_type": ""} tags=["hermeneutics"]
 # The code I have produced makes designing a multiclass classifier easy
 text_ids = ["25272", "42420", "25124"]
-text_labels = ["Jinpingmei", "Water Margin (70 chapter)", "Water Margin"]
+text_labels = ["Jinpingmei", "Shuihu (70 chapter)", "Shuihu zhuan"]
 
 multiple_sections, multiple_labels = get_text_and_labels(text_ids,
                                                  text_labels,
